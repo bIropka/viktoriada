@@ -11,8 +11,6 @@
 
 <div class="wrapper">
 
-
-
     <header role="banner">
 
         <div class="wrapper-inner">
@@ -27,6 +25,9 @@
             <a href="index.html" class="logo"><img src="source/images/logo.png" alt="">Викториада</a>
 
             <nav>
+
+                <i class="fa fa-bars burger"></i>
+
                 <ul>
                     <li><a href="#">главная</a></li>
                     <li><a href="#">итоги</a></li>
@@ -44,13 +45,15 @@
 
         <div class="banner-physics-winners">
 
-            <h2>победители викториады по физике</h2>
+            <h2>победители викториады <br>по физике</h2>
 
             <a href="#">подробнее</a>
 
         </div>
 
         <form action="#" class="form-registration">
+
+            <h2>регистрация</h2>
 
             <label>
                 <input type="text" placeholder="имя">
@@ -60,7 +63,7 @@
                 <input type="text" placeholder="e-mail">
             </label>
 
-            <label>
+            <label class="label-password">
                 <input type="text" placeholder="пароль">
             </label>
 
@@ -68,7 +71,7 @@
                 <input type="text" placeholder="повторите пароль">
             </label>
 
-            <label>
+            <label class="label-captcha">
                 <input type="text">
             </label>
 
@@ -76,7 +79,7 @@
 
             <button type="submit">отправить</button>
 
-            <button class="button-empty">войти</button>
+            <button class="button-empty sign-in">войти</button>
 
             <button class="button-empty">забыли пароль</button>
 
@@ -91,8 +94,10 @@
             <li>
                 <div class="image-wrap">
                     <img src="source/images/image-literature.png" alt="">
+                    <div class="space-hover">
+                        <button>подать заявку</button>
+                    </div>
                 </div>
-                <button class="button-orange">подать заявку</button>
                 <div class="quiz">
                     <div class="discipline-name">Литература</div>
                     <div class="quiz-name">Поэты серебряного века</div>
@@ -101,9 +106,11 @@
 
             <li>
                 <div class="image-wrap">
-                    <img src="source/images/image-literature.png" alt="">
+                    <img src="source/images/image-biology.png" alt="">
+                    <div class="space-hover">
+                        <button>подать заявку</button>
+                    </div>
                 </div>
-                <button class="button-orange">подать заявку</button>
                 <div class="quiz">
                     <div class="discipline-name">биология</div>
                     <div class="quiz-name">Селекция растений</div>
@@ -112,9 +119,11 @@
 
             <li>
                 <div class="image-wrap">
-                    <img src="source/images/image-literature.png" alt="">
+                    <img src="source/images/image-physics.png" alt="">
+                    <div class="space-hover">
+                        <button>подать заявку</button>
+                    </div>
                 </div>
-                <button class="button-orange">подать заявку</button>
                 <div class="quiz">
                     <div class="discipline-name">физика</div>
                     <div class="quiz-name">Баллистические ракеты</div>
@@ -123,9 +132,11 @@
 
             <li>
                 <div class="image-wrap">
-                    <img src="source/images/image-literature.png" alt="">
+                    <img src="source/images/image-german.png" alt="">
+                    <div class="space-hover">
+                        <button>подать заявку</button>
+                    </div>
                 </div>
-                <button class="button-orange">подать заявку</button>
                 <div class="quiz">
                     <div class="discipline-name">немецкий язык</div>
                     <div class="quiz-name">Правила немецкого языка</div>
@@ -136,20 +147,24 @@
 
     </div>
 
+    <footer role="contentinfo">
+
+        <div class="wrapper-inner">
+
+            <a href="index.html" class="logo"><img src="source/images/logo.png" alt="">Викториада</a>
+
+            <a href="http://kipserv.com/" target="_blank" class="logo-kip"><img src="source/images/logo-kip.png" alt=""></a>
+
+            <div class="copyrights">
+                Все права защищены. Копирование и распространение материалов с сайта запрещены.<br>
+                Информация не является публичной офертой.
+            </div>
+
+        </div>
+
+    </footer>
+
 </div>
-
-<footer role="contentinfo">
-
-    <a href="index.html" class="logo"><img src="source/images/logo.png" alt=""></a>
-
-    <div class="copyrights">
-        Все права защищены. Копирование и распространение материалов с сайта запрещены.<br>
-        Информация не является публичной офертой.
-    </div>
-
-    <a href="http://kipserv.com/" class="logo-kip"><img src="source/images/logo-kip.png" alt=""></a>
-
-</footer>
 
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/custom-scripts.js"></script>
