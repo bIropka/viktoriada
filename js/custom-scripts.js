@@ -8,11 +8,12 @@ $(document).ready(function () {
         $('.linear-indicator').removeClass('il-horizontal');
         $('.linear-indicator').addClass('il-vertical');
     } else if ($(window).width() < '981') {
-        $('.linear-indicator').removeClass('il-vertical');
-        $('.linear-indicator').addClass('il-horizontal');
         $('nav ul').css('display', 'none');
         $('.burger').removeClass('fa-close');
         $('.burger').addClass('fa-bars');
+    } else if ($(window).width() < '1031') {
+        $('.linear-indicator').removeClass('il-vertical');
+        $('.linear-indicator').addClass('il-horizontal');
     } else {
         $('.linear-indicator').removeClass('il-horizontal');
         $('.linear-indicator').addClass('il-vertical');
@@ -24,11 +25,12 @@ $(document).ready(function () {
             $('.linear-indicator').removeClass('il-horizontal');
             $('.linear-indicator').addClass('il-vertical');
         } else if ($(window).width() < '981') {
-            $('.linear-indicator').removeClass('il-vertical');
-            $('.linear-indicator').addClass('il-horizontal');
             $('nav ul').css('display', 'none');
             $('.burger').removeClass('fa-close');
             $('.burger').addClass('fa-bars');
+        } else if ($(window).width() < '1031') {
+            $('.linear-indicator').removeClass('il-vertical');
+            $('.linear-indicator').addClass('il-horizontal');
         } else {
             $('.linear-indicator').removeClass('il-horizontal');
             $('.linear-indicator').addClass('il-vertical');
@@ -126,6 +128,8 @@ $(document).ready(function () {
 
         linearIndicatorStep();
 
+        radialIndicatorStep();
+
         return false;
 
     });
@@ -154,7 +158,62 @@ $(document).ready(function () {
 
     }
 
+    /** radial indicator */
 
+    function radialIndicatorStep() {
+        
+        var step = nextStepNumber();
+        
+        nextStepImage(step);
+        
+    }
+
+    function nextStepNumber() {
+
+        var number = parseInt($('.radial-indicator .central span').html());
+        
+        if (number < 100) {
+
+            number += 5;
+            
+        }
+
+        $('.radial-indicator .central span').html(number);
+
+        return number;
+
+    }
+
+    function nextStepImage(step) {
+
+        var deg = (step / 5) * 18;
+
+        $('.radial-indicator .filled').css({
+            '-webkit-transform' : 'rotate(' + deg + 'deg)',
+            '-moz-transform' : 'rotate(' + deg + 'deg)',
+            '-ms-transform' : 'rotate(' + deg + 'deg)',
+            '-o-transform' : 'rotate(' + deg + 'deg)',
+            'transform' : 'rotate(' + deg + 'deg)'
+        });
+
+        if (step > 50) {
+            $('.radial-indicator').addClass('second-half');
+        }
+
+        /*var stepName = $('.radial-indicator').attr('class').split(' ')[1];
+
+        var newStepName = stepName.slice(0, -1);
+
+        var stepNumber = parseInt(stepName.slice(-1));
+
+        stepNumber++;
+
+        newStepName += stepNumber;
+
+        $('.radial-indicator').removeClass(stepName);
+        $('.radial-indicator').addClass(newStepName);*/
+
+    }
 
 });
 
