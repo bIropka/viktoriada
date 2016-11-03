@@ -1,11 +1,40 @@
 $(document).ready(function () {
 
-    var discipline = $('.disciplines li');
-
     /******************************
      ******* init scripts *********
      ******************************/
 
+    if ($(window).width() < '481') {
+        $('.linear-indicator').removeClass('il-horizontal');
+        $('.linear-indicator').addClass('il-vertical');
+    } else if ($(window).width() < '981') {
+        $('.linear-indicator').removeClass('il-vertical');
+        $('.linear-indicator').addClass('il-horizontal');
+        $('nav ul').css('display', 'none');
+        $('.burger').removeClass('fa-close');
+        $('.burger').addClass('fa-bars');
+    } else {
+        $('.linear-indicator').removeClass('il-horizontal');
+        $('.linear-indicator').addClass('il-vertical');
+        $('nav ul').css('display', 'flex');
+    }
+
+    $(window).resize(function(){
+        if ($(window).width() < '481') {
+            $('.linear-indicator').removeClass('il-horizontal');
+            $('.linear-indicator').addClass('il-vertical');
+        } else if ($(window).width() < '981') {
+            $('.linear-indicator').removeClass('il-vertical');
+            $('.linear-indicator').addClass('il-horizontal');
+            $('nav ul').css('display', 'none');
+            $('.burger').removeClass('fa-close');
+            $('.burger').addClass('fa-bars');
+        } else {
+            $('.linear-indicator').removeClass('il-horizontal');
+            $('.linear-indicator').addClass('il-vertical');
+            $('nav ul').css('display', 'flex');
+        }
+    });
     
 
     /******************************
@@ -14,10 +43,12 @@ $(document).ready(function () {
 
     $('.burger').click(function() {
         $(this).toggleClass('fa-close fa-bars');
-        $('nav ul').slideToggle(200);
+        $('nav ul').fadeToggle(200);
     });
 
     /** disciplines animation **/
+
+    var discipline = $('.disciplines li .image-wrap');
 
     discipline.hover (
 
@@ -32,7 +63,9 @@ $(document).ready(function () {
 
             }
 
-    },  function() {
+    },
+
+        function() {
 
             if($(window).width() > 980) {
 
@@ -42,7 +75,9 @@ $(document).ready(function () {
 
             }
 
-        });
+        }
+
+    );
 
     discipline.click(function() {
 
@@ -58,7 +93,9 @@ $(document).ready(function () {
 
             }
 
-        } else {
+        }
+
+        else {
 
             if($(window).width() < 981) {
 
@@ -80,6 +117,44 @@ $(document).ready(function () {
         }
 
     });
+
+    /************************************
+     ********* indicator scripts ********
+     ************************************/
+
+    $('.form-question button').click(function() {
+
+        linearIndicatorStep();
+
+        return false;
+
+    });
+
+    /** linear indicator */
+
+    function linearIndicatorStep() {
+
+        var items = $('.linear-indicator ul li');
+
+        for (var i =  0; i < items.length; i++) {
+
+            if ($(items[i]).hasClass('active')) {
+
+                $(items[i]).removeClass('active').addClass('empty');
+
+                if (i < items.length - 1) {
+                    $(items[i + 1]).addClass('active');
+                }
+
+                break;
+
+            }
+
+        }
+
+    }
+
+
 
 });
 
